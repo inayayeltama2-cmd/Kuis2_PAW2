@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="card mx-auto" style="max-width:480px">
+    <div class="card-header">Login Admin</div>
+    <div class="card-body">
+      <form (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input class="form-control" [(ngModel)]="username" name="username" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" required />
+        </div>
+        <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="card-footer small-muted text-center">Silakan masuk dengan akun admin Anda.</div>
+  </div>
+</div>
