@@ -10,40 +10,53 @@ import { Penduduk, PendudukService } from '../services';
   imports: [CommonModule, FormsModule],
   template: `
   <div class="container mt-4">
-    <h3>{{ isEdit ? 'Edit' : 'Input' }} Data Penduduk</h3>
-    <form (ngSubmit)="save()">
-      <div class="mb-3">
-        <label class="form-label">NIK</label>
-        <input class="form-control" [(ngModel)]="model.nik" name="nik" [readonly]="isEdit" required />
+    <div class="card">
+      <div class="card-header">
+        <h3 class="mb-0">{{ isEdit ? 'Edit' : 'Input' }} Data Penduduk</h3>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Nama</label>
-        <input class="form-control" [(ngModel)]="model.nama" name="nama" required />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Alamat</label>
-        <input class="form-control" [(ngModel)]="model.alamat" name="alamat" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Tgl Lahir</label>
-        <input type="date" class="form-control" [(ngModel)]="model.tgl_lahir" name="tgl_lahir" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Status</label>
-        <input class="form-control" [(ngModel)]="model.status" name="status" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Pekerjaan</label>
-        <input class="form-control" [(ngModel)]="model.pekerjaan" name="pekerjaan" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Gol Darah</label>
-        <input class="form-control" [(ngModel)]="model.gol_darah" name="gol_darah" />
-      </div>
+      <div class="card-body">
+        <form (ngSubmit)="save()">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label">NIK</label>
+              <input class="form-control" [(ngModel)]="model.nik" name="nik" [readonly]="isEdit" required />
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="form-label">Nama</label>
+              <input class="form-control" [(ngModel)]="model.nama" name="nama" required />
+            </div>
 
-      <button class="btn btn-primary" type="submit">Simpan</button>
-      <a class="btn btn-secondary ms-2" (click)="cancel()">Batal</a>
-    </form>
+            <div class="col-12">
+              <label class="form-label">Alamat</label>
+              <input class="form-control" [(ngModel)]="model.alamat" name="alamat" />
+            </div>
+
+            <div class="col-12 col-md-4">
+              <label class="form-label">Tgl Lahir</label>
+              <input type="date" class="form-control" [(ngModel)]="model.tgl_lahir" name="tgl_lahir" />
+            </div>
+            <div class="col-6 col-md-4">
+              <label class="form-label">Status</label>
+              <input class="form-control" [(ngModel)]="model.status" name="status" />
+            </div>
+            <div class="col-6 col-md-4">
+              <label class="form-label">Gol Darah</label>
+              <input class="form-control" [(ngModel)]="model.gol_darah" name="gol_darah" />
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Pekerjaan</label>
+              <input class="form-control" [(ngModel)]="model.pekerjaan" name="pekerjaan" />
+            </div>
+
+            <div class="col-12 d-flex gap-2 mt-3">
+              <button class="btn btn-primary" type="submit">Simpan</button>
+              <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Batal</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   `,
 })
