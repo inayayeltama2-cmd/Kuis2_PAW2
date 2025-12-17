@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #2b6cb0 0%, #1e4d7b 100%); box-shadow: 0 8px 16px rgba(43,108,176,0.15)">
+  <div class="container">
+
+    <!-- BRAND -->
+    <a class="navbar-brand fw-bold" routerLink="/home" style="font-size:1.3rem; color:white !important">
+      Pencatatan Kependudukan
+    </a>
+
+    <!-- TOGGLER -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#nav"
+      style="border-color: rgba(255,255,255,0.5)"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
+
+        <li class="nav-item d-flex align-items-center">
+          <a
+            class="nav-link"
+            routerLink="/home"
+            routerLinkActive="fw-bold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            style="padding: 8px 12px; color:white !important; text-decoration:none"
+          >
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item d-flex align-items-center">
+          <a
+            class="nav-link"
+            routerLink="/penduduk"
+            routerLinkActive="fw-bold"
+            style="padding: 8px 12px; color:white !important; text-decoration:none"
+          >
+            Data Penduduk
+          </a>
+        </li>
+
+        <li class="nav-item d-flex align-items-center ms-2">
+          <button
+            class="btn btn-outline-light btn-sm px-3"
+            (click)="logout()"
+            style="border-color: rgba(255,255,255,0.5); white-space: nowrap"
+          >
+            Logout
+          </button>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
